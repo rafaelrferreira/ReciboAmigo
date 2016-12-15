@@ -9,7 +9,7 @@
     <meta name="author" content="Recibo Amigo">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <title>ReciboAmigo</title>
+    <title>Recibo Amigo - Emissão rápida e fácil de recibos</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
       body {padding-top: 0px !important;}
       .header {padding-bottom: 2px;}
       header h2{ font-size: 20px; font-weight: bold;}
-      section { height: 545px;}
+    
       section p {padding: 0px 5px 10px 5px;}
       section form { padding: 19px;}
       .roundTop {
@@ -85,8 +85,12 @@
           width:120px;
           display: block;
         }
-
-        .jumbotronBg {background: transparent url(bg01.jpg) top -20px  left no-repeat;}
+        .nav>li>a {color: white !important;}
+        .nav>li>a:hover {background-color: #337ab7;}
+        h3.company-name {font-family: bold 18px 'CircularStd',sans-serif; }
+        .jumbotronBg {background: transparent url(bg01.jpg) top left no-repeat;}
+        .jumbotron .features h4 { text-align: left; }
+        .jumbotron .features p {font-size: 14px; text-align: left; }
   </style>
 </head>
 
@@ -94,36 +98,57 @@
 
     <div class="container">
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron jumbotronBg" style="color: white;">
-        <h3>Emissão de Recibos de forma rápida e fácil. </h3>
-          <h3>Sem burocracia.</h3>
-        <p style="font-size:14px; padding: 60px;">This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-xs btn-primary round" href="#" role="button">Baixar Recibo &raquo;</a>
-        </p>
-      </div>
-
-      <div class="wrapper header clearfix">
-        dfdsfsdf
-      </div>
-
-      <div id="social-share" class="socialfloating"><div id="share"></div></div>
-      <div class="row marketing" ng-app="downloadApp" ng-controller="downloadController" ng-init="init()">
-        
-        <div class="col-lg-6">
-            dsfsdfsdfsdf
+      <div class="jumbotron jumbotronBg shadow" style="color: white; border: solid 1px silver;" >
+        <div class="clearfix" style="">
+          <nav>
+            <ul class="nav nav-pills pull-right">
+              <li role="presentation" class="active"><a href="#">Home</a></li>
+              <li role="presentation"><a href="#">Características</a></li>
+              <li role="presentation"><a href="#">Preço</a></li>
+            </ul>
+          </nav>
+          <img alt="" width="30" height="40" class="pull-left" src="logo4.png"></img>
+          <h3 class="text pull-left company-name" style="margin-top: 8px; margin-left: 10px;">Recibo Amigo</h3>
         </div>
 
-        <div class="col-lg-6" >
-            dasd asa ada
+        <div style="margin-top: 40px;">
+          <h3>Emissão de Recibos Avulsos de forma rápida e fácil. </h3>
+            <h3>Sem burocracia. Sem assinaturas.</h3>
+          <p style="font-size:14px; padding: 55px;">This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It include.</p>
+          <p>
+            <a class="btn btn-xs btn-primary round" href="#" role="button">Emitir Recibo &raquo;</a>
+          </p>
         </div>
 
+        <div class="row marketing features" style="color: black;" ng-app="downloadApp" ng-controller="downloadController" ng-init="init()">
+          <section>
+            <h3>Características</h3>
+            <div class="col-lg-6">
+                <h4>Subheading</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+                <h4>Subheading</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+            <div class="col-lg-6" >
+               <h4>Subheading</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+                <h4>Subheading</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+          </section>
+          <section>
+            <h3>Preço</h3>
+        </div>
       </div>
+
+      <!--<div id="social-share" class="socialfloating"><div id="share"></div></div>-->
 
       <footer class="footer">
-        <p>© 2016 TechShift LTDA ME</p>
+        <span> 2016 TechShift LTDA ME / CNPJ:12.984.527/0001-87</span>
+        <span class="pull-right">contato@reciboamigo.com.br</span>
       </footer>
-
     </div> <!-- /container -->
 
 
