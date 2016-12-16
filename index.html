@@ -27,7 +27,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
-
+    <link href="pricing.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,7 +43,7 @@
       header { 
         color: white;
       }
-      body {padding-top: 0px !important;}
+      body {padding-top: 0px !important; background-color:#f7f8fa;}
       .header {padding-bottom: 2px;}
       header h2{ font-size: 20px; font-weight: bold;}
     
@@ -87,8 +87,10 @@
         }
         .nav>li>a {color: white !important;}
         .nav>li>a:hover {background-color: #337ab7;}
+        .nav>li>a:visited {background-color: #337ab7;}
         h3.company-name {font-family: bold 18px 'CircularStd',sans-serif; }
         .jumbotronBg {background: transparent url(bg01.jpg) top left no-repeat;}
+        .jumbotron {background-color: white;}
         .jumbotron .features h4 { text-align: left; }
         .jumbotron .features p {font-size: 14px; text-align: left; }
   </style>
@@ -102,19 +104,19 @@
         <div class="clearfix" style="">
           <nav>
             <ul class="nav nav-pills pull-right">
-              <li role="presentation" class="active"><a href="#">Home</a></li>
-              <li role="presentation"><a href="#">Características</a></li>
-              <li role="presentation"><a href="#">Preço</a></li>
+              <li role="presentation"><a href="#Características">Características</a></li>
+              <li role="presentation"><a href="#Preço">Preço</a></li>
+              <li role="presentation"><a href="#Contato">Contato</a></li>
             </ul>
           </nav>
           <img alt="" width="30" height="40" class="pull-left" src="logo4.png"></img>
           <h3 class="text pull-left company-name" style="margin-top: 8px; margin-left: 10px;">Recibo Amigo</h3>
         </div>
 
-        <div style="margin-top: 40px;">
-          <h3>Emissão de Recibos Avulsos de forma rápida e fácil. </h3>
+        <div style="margin-top: 85px;">
+          <h3 style="line-height: 0.3 !important;">Emissão de recibos de forma rápida e fácil. </h3>
             <h3>Sem burocracia. Sem assinaturas.</h3>
-          <p style="font-size:14px; padding: 55px;">This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It include.</p>
+          <p style="font-size:14px; padding: 55px;">Emissão de recibos online para pessoa física ou jurídica.</p>
           <p>
             <a class="btn btn-xs btn-primary round" href="#" role="button">Emitir Recibo &raquo;</a>
           </p>
@@ -122,24 +124,97 @@
 
         <div class="row marketing features" style="color: black;" ng-app="downloadApp" ng-controller="downloadController" ng-init="init()">
           <section>
-            <h3>Características</h3>
+            <h3 id="Características"><strong>Características</strong></h3><br/>
             <div class="col-lg-6">
-                <h4>Subheading</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                <h4>PMEs / MEI</h4>
+                <p>Pequenas Empresas e Micro empreededores individuais podem utilizar o sistema de emissão para garantir que seus clientes terão sempre confiança nos seus serviços.</p>
 
-                <h4>Subheading</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                <h4>Profissional Autônomo</h4>
+                <p>Emita recibos para organizar suas atividades e se torne independente financeiramente usurfruindo de um sistema seguro de baixo custo.</p>
             </div>
             <div class="col-lg-6" >
-               <h4>Subheading</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+               <h4>Logomarca</h4>
+                <p>Adicione a logomarca da sua empresa ao recibos com facilidade para garantir maior confiabilidade dos seus clientes. Utilize formatos como <strong>PNG</strong> e <strong>JPEG</strong> sem complicações. </p>
 
-                <h4>Subheading</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                <h4>Interface interativa</h4>
+                <p>Somos o único sistema online de recibos que permite você cadastrar as informações do recibo e visualizar o resultado final ao mesmo tempo.</p>
             </div>
           </section>
           <section>
-            <h3>Preço</h3>
+            <h3 id="Preço"><strong>Preço</strong></h3><br/>
+            <div class="col-lg-4">
+              <!-- Pricing List v4 -->
+              <div class="pricing-list-v4 radius-10" style="width: 170px; height: 340px;">
+                  <div class="pricing-list-v4-header" style="padding: 20px 20px 10px 1px;">
+                      <h4 class="pricing-list-v4-title" style="text-align: center;font-size:26px;">Básico</h4>
+                      <span class="pricing-list-v4-subtitle">Individual Comum</span>
+                  </div>
+                  <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important; ">
+                          <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
+                          <span class="pricing-list-v4-price">2.</span>
+                          <span class="pricing-list-v4-subprice">90</span>
+                          <span class="pricing-list-v4-price-info">1 Recibo</span>
+                      </div>
+                      <div class="center-block">
+                          <button type="button" class="btn-dark-brd btn-base-sm radius-3">Comprar</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <!-- Pricing List v4 -->
+              <div class="pricing-list-v4 radius-10" style="width: 170px; height: 340px;">
+                  <div class="pricing-list-v4-header" style="padding: 20px 20px 10px 1px;">
+                      <h4 class="pricing-list-v4-title" style="text-align: center; font-size:26px;">Premium</h4>
+                      <span class="pricing-list-v4-subtitle">Business Hardcore</span>
+                  </div>
+                  <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important;">
+                          <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
+                          <span class="pricing-list-v4-price">19.</span>
+                          <span class="pricing-list-v4-subprice">90</span>
+                          <span class="pricing-list-v4-price-info">10 Recibo</span>
+                      </div>
+                      <div class="center-block">
+                          <button type="button" class="btn-dark-brd btn-base-sm radius-3">Comprar</button>
+                          <span class="help-block">*Sem marca d'água</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <!-- Pricing List v4 -->
+              <div class="pricing-list-v4 radius-10" style="width: 170px; height: 340px;">
+                  <div class="pricing-list-v4-header" style="padding: 20px 20px 10px 1px;">
+                      <h4 class="pricing-list-v4-title" style="text-align: center; font-size:26px;">Ultimate</h4>
+                      <span class="pricing-list-v4-subtitle">Enterpresi Galactic</span>
+                  </div>
+                  <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important;">
+                          <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
+                          <span class="pricing-list-v4-price">49.</span>
+                          <span class="pricing-list-v4-subprice">90</span>
+                          <span class="pricing-list-v4-price-info">50 Recibo</span>
+                      </div>
+                      <div class="center-block">
+                          <button type="button" class="btn-dark-brd btn-base-sm radius-3">Comprar</button>
+                          <span class="help-block">*Sem marca d'água</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </section>
+          <section style="margin-top: 400px;">
+
+                 <h3 id="Contato"><strong>Contato</strong></h3>
+
+          </section>
+           <section style="margin: 40px; display: inline-block;">
+              <p>
+                <a class="btn btn-xs btn-primary round" href="#" role="button">Emitir Recibo &raquo;</a>
+              </p>
+          </section>
         </div>
       </div>
 
@@ -161,21 +236,27 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>-->
     <script>
-        <!--$("#share").jsSocials({
-            shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest"],
-             url: "http://materiais.tsestoque.com.br/planilha-curva-abc",
-            text: "Planilha grátis: Curva ABC http://materiais.tsestoque.com.br/planilha-curva-abc via @tsestoque",
-            showLabel: true,
-            showCount: true,
-            shareIn: "popup"
-        });-->
 
         var downloadApp = angular.module("downloadApp", []);
          downloadApp.controller('downloadController', function($scope) {
             $scope.init = function () {
-                $scope.error = false;
             }
          });
+
+         $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html, body').animate({
+                    scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+                }
+              }
+            });
+          });
     </script>
 
 </body>
