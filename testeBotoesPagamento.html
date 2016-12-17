@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Botoes de Pagamento </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initialscale=1.0">
+	<!-- The Bootstrap minified CDN CSS Link -->
+	<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.
+	css">
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<h1> Teste Botoes </h1>
+
+<div class="containet">
+	<div class="row">
+		<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+		<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+		<input type="hidden" name="code" value="A43EA9E9EDEDDB8774B60FA06660E320" />
+		<input type="hidden" name="iot" value="button" />
+		<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+		</form>
+		<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+	</div>
+	<div class="row">
+		<form method='post' action='https://www.moip.com.br/PagamentoSimples.do'>
+		<input type='hidden' name='id_carteira' value='rafaelrferreira'/>
+		<input type='hidden' name='valor' value='1990'/>
+		<input type='hidden' name='nome' value='Recibo Amigo - Plano Premium (5 créditos)'/>
+		<input type='hidden' name='id_transacao' value='RA02'/>
+		<input type='image' name='submit' src='https://static.moip.com.br/imgs/buttons/bt_pagar_c02_e04.png' alt='Pagar' border='0' />
+		</form>
+	</div>
+</div>
+
+<!-- JavaScript plugins (requires jQuery) -->
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.
+min.js"></script>
+<!-- The Bootstrap minified JavaScript CDN link -->
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.
+js"></script>
+<!-- Include HTML5 Shim and Respond.js for IE6-8 support of HTML5
+elements and media queries -->
+<script
+src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+</script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
+</script>
+
+</body>
+</html>
