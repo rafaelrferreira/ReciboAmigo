@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Recibo Amigo">
+    <link rel="icon" href="logo4.ico">
+
+    <title>Recibo Amigo - Emitir Recibo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="jumbotron-narrow.css" rel="stylesheet">
+    <link type="text/css" href="estilos.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  </head>
+
+  <body ng-app="emitirReciboApp" ng-controller="emitirReciboController" ng-init="init()">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h3 class="text pull-left company-name" style="margin-top: 12px; margin-left: 5px; color: white;">Recibo Amigo</h3>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Chave de Acesso" class="form-control" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-success">Login</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <br/>
+        <h2>Crie uma conta e comece a utilizar nosso serviço. =)</h2>
+        <button class="btn btn-lg btn-primary">Criar nova conta &raquo;</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" style="text-align: center;">
+        <button class="btn btn-md btn-default disabled">Recibo de Pagamento Simples</button> <button class="btn btn-md btn-default disabled">Recibo de Pagamento de Aluguel</button>
+        <br/>
+        <br/>
+        <div class="col-md-5" style="text-align: left; margin: 15px;">
+            Pessoa: <input type="text" ng-model="PESSOA" placeholder="Nome da Pessoa" maxlength="40"/><br/>
+            Quantia: <input type="text" ng-model="QUANTIA" placeholder="Valor em R$" /><br/>
+            Quantia por extenso: <input type="text" ng-model="QUANTIAEXT" placeholder="Valor por extenso" /><br/>
+        </div>
+        <div class="col-md-5" style="text-align: left; margin: 15px;">
+            Serviço: <input type="text" ng-model="SERVICO" placeholder="Descrição do serviço" /><br/>
+            Cidade: <input type="text" ng-model="CIDADE" placeholder="Cidade" /><br/>
+            Data: <input type="text" ng-model="DATA" placeholder="Data de realização do serviço" /><br/>
+        </div>
+        <div class="row">
+          <div class="col-md-12" style=" margin: 15px;">
+            <table id="tabelaRecibo" style="background-color:white; width: 650px;margin: 0px auto;  border: Solid 2px Gray; margin-bottom: 20px;" >
+              <tr>
+                  <td style="text-align: center; font-size: 36px; font-weight: bold;">Recibo</td>
+              </tr>
+              <tr>
+                  <td class="content" style="padding-left: 20px; padding-right: 15px; padding-top: 20px; padding-bottom: 40px; line-height: 2.4em; text-align: justify;">
+                 <span style="padding-left: 20px;">Recebi(emos) de, <strong style="text-decoration: underline;">{{PESSOA}}</strong> a quantia de <strong style="text-decoration: underline;">R$ {{QUANTIA}}</strong></span>
+                (<span style="font-style: italic;">{{QUANTIAEXT}}</span> reais), correspondente a <strong style="text-decoration: underline;">{{SERVICO}}</strong>, 
+                e para clareza firmo(amos) o presente na cidade de <strong style="text-decoration: underline;">{{CIDADE}}</strong> no dia <strong style="text-decoration: underline;">{{DATA}}</strong>.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+       <footer class="footer">
+        <span> 2016 TechShift LTDA ME / CNPJ:12.984.527/0001-87</span>
+        <span class="pull-right">contato@reciboamigo.com.br</span>
+      </footer>
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script>
+        //AngularJS
+        var downloadApp = angular.module("emitirReciboApp", []);
+         downloadApp.controller('emitirReciboController', function($scope) {
+            $scope.init = function () {
+              $scope.PESSOA = "Rafael Reis Ferreira";
+              $scope.QUANTIA = "3.500,00";
+              $scope.QUANTIAEXT = "três mil e quientos reais e zero centavos";
+              $scope.SERVICO = "Instalação de Software e Desenvolvimento";
+              $scope.CIDADE = "Aracaju - Sergipe";
+              $scope.DATA = "25/02/2016";
+            }
+         });
+    </script>
+</body>
+</html>

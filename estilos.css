@@ -1,0 +1,68 @@
+@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+.wrapper { overflow: hidden; display: table; position: relative; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.wrapper figure { display: table-cell; width: 30%; }
+.wrapper hgroup { display: table-cell; width: 70%; padding: 10px;}
+.wrapper hgroup h1 { font-weight: bold; font-size: 32px; line-height: 0.9em; }
+.wrapper hgroup h2 { font-weight: normal; font-size: 18px; line-height: 1.1em; }
+header { 
+color: white;
+}
+body {padding-top: 0px !important; background-color:#f7f8fa;}
+.header {padding-bottom: 2px;}
+header h2{ font-size: 20px; font-weight: bold;}
+
+section p {padding: 0px 5px 10px 5px;}
+section form { padding: 19px;}
+.roundTop {
+border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+background: #96c441;
+padding: 5px 20px 5px 20px; 
+}
+.roundBottom {
+border-bottom-right-radius: 25px;
+border-bottom-left-radius: 25px;
+background: #dddddd;
+padding: 0px; 
+}
+.round{
+    border-bottom-right-radius: 25px;
+border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+}
+.detail {font-size:12px; text-align: center; }
+.shadow {box-shadow: 5px 5px 5px #888888;}
+
+.btn-xlarge {
+padding: 18px 28px;
+font-size: 22px;
+line-height: normal;
+-webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+        border-radius: 8px;
+}
+.socialfloating{
+    position: absolute;
+    top:28%;
+    left:13%;
+    width:120px;
+    display: block;
+}
+@font-face {
+    font-family: MrHeadlines;
+    src: url(MrHeadlines.ttf);
+}
+@font-face {
+    font-family: BrightLarch;
+    src: url(BrightLarch.ttf);
+}
+.nav>li>a {color: white !important;}
+.nav>li>a:hover {background-color: #337ab7;}
+.nav>li>a:visited {background-color: #337ab7;}
+h3.company-name {font: 200 28px 'BrightLarch','MrHeadlines','CircularStd',sans-serif; }
+.jumbotronBg {background: transparent url(bg01.jpg) top left no-repeat;}
+.jumbotron {background-color: white;}
+.jumbotron .features h4 { text-align: left; }
+.jumbotron .features p {font-size: 14px; text-align: left; }
+
