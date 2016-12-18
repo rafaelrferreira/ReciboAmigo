@@ -59,31 +59,72 @@
 
     <div class="container">
       <div class="row" style="text-align: center;">
-        <button class="btn btn-md btn-default disabled">Recibo de Pagamento Simples</button> <button class="btn btn-md btn-default disabled">Recibo de Pagamento de Aluguel</button>
+        <button class="btn btn-md btn-default disabled">Recibo de Pagamento Simples</button> 
+        <button class="btn btn-md btn-default disabled">Recibo de Pagamento de Aluguel</button>
         <br/>
         <br/>
-        <div class="col-md-5" style="text-align: left; margin: 15px;">
-            Pessoa: <input type="text" ng-model="PESSOA" placeholder="Nome da Pessoa" maxlength="40"/><br/>
-            Quantia: <input type="text" ng-model="QUANTIA" placeholder="Valor em R$" /><br/>
-            Quantia por extenso: <input type="text" ng-model="QUANTIAEXT" placeholder="Valor por extenso" /><br/>
-        </div>
-        <div class="col-md-5" style="text-align: left; margin: 15px;">
-            Serviço: <input type="text" ng-model="SERVICO" placeholder="Descrição do serviço" /><br/>
-            Cidade: <input type="text" ng-model="CIDADE" placeholder="Cidade" /><br/>
-            Data: <input type="text" ng-model="DATA" placeholder="Data de realização do serviço" /><br/>
-        </div>
+        <form>
+          <div class="col-md-5" style="text-align: left; margin: 15px; margin-left: 30px;">
+            <div class="form-group">
+              <label for="txtPessoa" style="margin-bottom: 1px;">Pessoa</label>
+              <div class="help-block" style="font-size: 12px; margin: 1px;">Informe a pessoa que recebeu o pagamento</div>
+              <input id="txtPessoa" type="text" ng-model="PESSOA" class="form-control" placeholder="Nome da Pessoa" maxlength="40"/>
+            </div>
+            <div class="form-group">
+              <div style="display: inline-block;">
+                <label for="txtQuantia" style="margin-bottom: 1px;">Quantia</label>
+                <div class="help-block" style="font-size: 12px; margin: 1px;">Valor do pagamento</div>
+                <input id="txtQuantia" type="text" class="form-control" ng-model="QUANTIA" placeholder="Valor em R$" style="width: 120px;">
+              </div>
+              <div style="display: inline-block;">
+                <label for="txtData" style="margin-bottom: 1px;">Data</label>
+                <div class="help-block" style="font-size: 12px; margin: 1px;">Data do serviço</div>
+                <input id="txtData" type="text"class="form-control"  ng-model="DATA" placeholder="00/00/0000" maxlength="10" style="width: 100px;"/>
+              </div>
+            </div>
+              <!--Pessoa: <input type="text" ng-model="PESSOA" placeholder="Nome da Pessoa" maxlength="40"/><br/>
+              Quantia: <input type="text" ng-model="QUANTIA" placeholder="Valor em R$" /><br/>
+              Quantia por extenso: <input type="text" ng-model="QUANTIAEXT" placeholder="Valor por extenso" /><br/>-->
+          </div>
+          <div class="col-md-5" style="text-align: left; margin: 15px;">
+            <div class="form-group">
+              <label for="txtServico" style="margin-bottom: 1px;">Serviço</label>
+              <div class="help-block" style="font-size: 12px; margin: 1px;">Descrição do serviço</div>
+              <input id="txtServico" type="text"class="form-control"  ng-model="SERVICO" placeholder="Descrição do serviço" maxlength="150"/>
+            </div>
+            <div class="form-group">
+              <label for="txtCidade" style="margin-bottom: 1px;">Cidade</label>
+              <div class="help-block" style="font-size: 12px; margin: 1px;">Cidade/Estado onde for feito o serviço</div>
+              <input id="txtCidade" type="text"class="form-control"  ng-model="CIDADE" placeholder="Salvador ou Salvador/BA" maxlength="150"/>
+            </div>
+              <!--Serviço: <input type="text" ng-model="SERVICO" placeholder="Descrição do serviço" /><br/>
+              Cidade: <input type="text" ng-model="CIDADE" placeholder="Cidade" /><br/>
+              Data: <input type="text" ng-model="DATA" placeholder="Data de realização do serviço" /><br/>-->
+          </div>
+        </form>
         <div class="row">
           <div class="col-md-12" style=" margin: 15px;">
-            <table id="tabelaRecibo" style="background-color:white; width: 650px;margin: 0px auto;  border: Solid 2px Gray; margin-bottom: 20px;" >
+            <button class="btn btn-lg btn-success disabled" data-toggle="tooltip" title="Libera a visualização do recibo e os botões de ação">Emitir Recibo</button> <br/><br/>
+            <table id="tabelaRecibo" class="shadow blur" style="color: Gray; background: white url(marcadagua.png) repeat top left; width: 650px;margin: 0px auto;  border: Solid 2px Gray; margin-bottom: 20px;" >
               <tr>
                   <td style="text-align: center; font-size: 36px; font-weight: bold;">Recibo</td>
               </tr>
               <tr>
                   <td class="content" style="padding-left: 20px; padding-right: 15px; padding-top: 20px; padding-bottom: 40px; line-height: 2.4em; text-align: justify;">
-                 <span style="padding-left: 20px;">Recebi(emos) de, <strong style="text-decoration: underline;">{{PESSOA}}</strong> a quantia de <strong style="text-decoration: underline;">R$ {{QUANTIA}}</strong></span>
-                (<span style="font-style: italic;">{{QUANTIAEXT}}</span> reais), correspondente a <strong style="text-decoration: underline;">{{SERVICO}}</strong>, 
-                e para clareza firmo(amos) o presente na cidade de <strong style="text-decoration: underline;">{{CIDADE}}</strong> no dia <strong style="text-decoration: underline;">{{DATA}}</strong>.</td>
+                 <span style="padding-left: 20px;">Recebi(emos) de, <strong>{{PESSOA}}</strong> a quantia de <strong>R$ {{QUANTIA}}</strong></span>
+                (<span style="font-style: italic;">{{QUANTIAEXT}}</span> reais), correspondente a <strong>{{SERVICO}}</strong>, 
+                e para clareza firmo(amos) o presente na cidade de <strong>{{CIDADE}}</strong> no dia <strong>{{DATA}}</strong>.</td>
               </tr>
+               <tr>
+                  <td style="text-align: left; padding-left: 30px;">
+                    <div style="float: left; ">Assinatura: </div>
+                    <div style="float: left; height: 16px; width: 320px; border-bottom: dashed 1px Gray;"></div>
+                </td>
+                <tr>
+                  <td style="text-align: left; padding-left: 30px; padding-top: 20px; padding-bottom: 40px;">
+                    <div style="float: left; ">Nome por extenso: </div>
+                    <div style="float: left; height: 16px; width: 270px; border-bottom: dashed 1px Gray;"></div>
+                </td>
             </table>
           </div>
         </div>
@@ -98,6 +139,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="angular.min.js"></script>
     <script>
         //AngularJS
@@ -112,6 +154,8 @@
               $scope.DATA = "25/02/2016";
             }
          });
+
+         $('[data-toggle="tooltip"]').tooltip();
     </script>
 </body>
 </html>

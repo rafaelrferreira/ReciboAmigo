@@ -66,3 +66,8 @@ h3.company-name {font: 200 28px 'BrightLarch','MrHeadlines','CircularStd',sans-s
 .jumbotron .features h4 { text-align: left; }
 .jumbotron .features p {font-size: 14px; text-align: left; }
 
+.blur { -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);}
