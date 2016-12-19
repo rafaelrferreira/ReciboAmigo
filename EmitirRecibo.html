@@ -44,6 +44,7 @@
               <input type="password" placeholder="Chave de Acesso" class="form-control" autocomplete="off">
             </div>
             <button type="submit" class="btn btn-success">Login</button>
+            <div class="pull-right" style="padding-left: 10px;"><button type="submit" class="btn btn-danger">Sair</button></div>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -58,12 +59,44 @@
     </div>
 
     <div class="container">
+      <div id="userDataProfile" class="row" style="text-align: center; font-size: 16px; padding: 10px 10px 30px 10px;">
+        <div class="row">
+          <div class="col-md-12">
+            <div style="padding-bottom: 5px;"><span style="font-size: 14px;"><strong>Você possui:</strong> </span> <span class="label label-default" style="font-size: 18px;">0</span> créditos disponíveis.<br/></div>
+            <a href="#" data-toogle="tooltip" title="Visualize o histórico de compra de créditos" style="font-size: 13px;">Ver histórico de créditos</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div style="padding-bottom: 5px; padding-top: 20px;"><span style="font-size: 14px;"><strong>Comprar créditos:</strong> </div>
+            <pre style="width: 280px; margin: 0px auto; margin-bottom: 5px;">{{radioModel || 'Escolha um pacote de créditos'}}</pre>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Pacote Básico - 5 créditos'">05</label>
+                <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Pacote Premium - 10 créditos'">10</label>
+                <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Pacote Enterprise - 50 créditos '">50</label>
+            </div>
+            <div style="padding: 20px;">
+              <form method='post' action='https://www.moip.com.br/PagamentoSimples.do'>
+                <input type='hidden' name='id_carteira' value='rafaelrferreira'/>
+                <input type='hidden' name='valor' value='1990'/>
+                <input type='hidden' name='nome' value='Recibo Amigo - Plano Premium (5 créditos)'/>
+                <input type='hidden' name='id_transacao' value='RA02'/>
+                <input type='image' name='submit' src='https://static.moip.com.br/imgs/buttons/bt_pagar_c02_e04.png' alt='Pagar' border='0' />
+              </form>
+              <div class="help-block" style="font-size: 12px;">obs: aceitamos apenas pagamento por boleto bancário. O pagamento pode levar até 3 dias para ser compensado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
       <div class="row" style="text-align: center;">
-        <button class="btn btn-md btn-default disabled">Recibo de Pagamento Simples</button> 
-        <button class="btn btn-md btn-default disabled">Recibo de Pagamento de Aluguel</button>
-        <br/>
-        <br/>
         <form>
+          <h3>Emissão de Recibo</h3>
+          <button class="btn btn-md btn-default disabled">Recibo de Pagamento Simples</button> 
+          <button class="btn btn-md btn-default disabled">Recibo de Pagamento de Aluguel</button>
+          <br/>
+          <br/>
+          <div class="help-block">Preencha os dados do recibo e clique em "Emitir Recibo", depois imprima ou baixe a nota. Atenção: Os dados informados serão utilizados somente para a geração do recibo, sendo descartados automaticamente.</div>
           <div class="col-md-5" style="text-align: left; margin: 15px; margin-left: 30px;">
             <div class="form-group">
               <label for="txtPessoa" style="margin-bottom: 1px;">Pessoa</label>
@@ -73,8 +106,8 @@
             <div class="form-group">
               <div style="display: inline-block;">
                 <label for="txtQuantia" style="margin-bottom: 1px;">Quantia</label>
-                <div class="help-block" style="font-size: 12px; margin: 1px;">Valor do pagamento</div>
-                <input id="txtQuantia" type="text" class="form-control" ng-model="QUANTIA" placeholder="Valor em R$" style="width: 120px;">
+                <div class="help-block" style="font-size: 12px; margin: 1px;">Valor do pagamento</div> 
+                <input id="txtQuantia" type="text" class="form-control" ng-model="QUANTIA" ng-blur="MostraValorPorExt()" data-toggle="tooltip" title="Usar apenas vírgula" data-placement="bottom" placeholder="Valor em R$" style="width: 120px;">
               </div>
               <div style="display: inline-block;">
                 <label for="txtData" style="margin-bottom: 1px;">Data</label>
@@ -82,9 +115,6 @@
                 <input id="txtData" type="text"class="form-control"  ng-model="DATA" placeholder="00/00/0000" maxlength="10" style="width: 100px;"/>
               </div>
             </div>
-              <!--Pessoa: <input type="text" ng-model="PESSOA" placeholder="Nome da Pessoa" maxlength="40"/><br/>
-              Quantia: <input type="text" ng-model="QUANTIA" placeholder="Valor em R$" /><br/>
-              Quantia por extenso: <input type="text" ng-model="QUANTIAEXT" placeholder="Valor por extenso" /><br/>-->
           </div>
           <div class="col-md-5" style="text-align: left; margin: 15px;">
             <div class="form-group">
@@ -94,12 +124,9 @@
             </div>
             <div class="form-group">
               <label for="txtCidade" style="margin-bottom: 1px;">Cidade</label>
-              <div class="help-block" style="font-size: 12px; margin: 1px;">Cidade/Estado onde for feito o serviço</div>
+              <div class="help-block" style="font-size: 12px; margin: 1px;">Local onde foi feito o serviço</div>
               <input id="txtCidade" type="text"class="form-control"  ng-model="CIDADE" placeholder="Salvador ou Salvador/BA" maxlength="150"/>
             </div>
-              <!--Serviço: <input type="text" ng-model="SERVICO" placeholder="Descrição do serviço" /><br/>
-              Cidade: <input type="text" ng-model="CIDADE" placeholder="Cidade" /><br/>
-              Data: <input type="text" ng-model="DATA" placeholder="Data de realização do serviço" /><br/>-->
           </div>
         </form>
         <div class="row">
@@ -110,21 +137,24 @@
                   <td style="text-align: center; font-size: 36px; font-weight: bold;">Recibo</td>
               </tr>
               <tr>
-                  <td class="content" style="padding-left: 20px; padding-right: 15px; padding-top: 20px; padding-bottom: 40px; line-height: 2.4em; text-align: justify;">
+                <td class="content" style="padding-left: 20px; padding-right: 15px; padding-top: 20px; padding-bottom: 40px; line-height: 2.4em; text-align: justify;">
                  <span style="padding-left: 20px;">Recebi(emos) de, <strong>{{PESSOA}}</strong> a quantia de <strong>R$ {{QUANTIA}}</strong></span>
-                (<span style="font-style: italic;">{{QUANTIAEXT}}</span> reais), correspondente a <strong>{{SERVICO}}</strong>, 
+                (<span style="font-style: italic;">{{QUANTIAEXT}}</span>), correspondente a <strong>{{SERVICO}}</strong>, 
                 e para clareza firmo(amos) o presente na cidade de <strong>{{CIDADE}}</strong> no dia <strong>{{DATA}}</strong>.</td>
               </tr>
-               <tr>
-                  <td style="text-align: left; padding-left: 30px;">
-                    <div style="float: left; ">Assinatura: </div>
-                    <div style="float: left; height: 16px; width: 320px; border-bottom: dashed 1px Gray;"></div>
+              <tr>
+                <td style="text-align: left; padding-left: 30px;">
+                  <div style="float: left; ">Assinatura: </div>
+                  <div style="float: left; height: 16px; width: 320px; border-bottom: dashed 1px Gray;"></div>
                 </td>
-                <tr>
-                  <td style="text-align: left; padding-left: 30px; padding-top: 20px; padding-bottom: 40px;">
-                    <div style="float: left; ">Nome por extenso: </div>
-                    <div style="float: left; height: 16px; width: 270px; border-bottom: dashed 1px Gray;"></div>
+              </tr>
+              <tr>
+                <td style="text-align: left; padding-left: 30px; padding-top: 20px; padding-bottom: 40px;">
+                  <div style="float: left; ">Nome por extenso: </div>
+                  <div style="float: left; height: 16px; width: 270px; border-bottom: dashed 1px Gray;"></div>
+                  <div style="position:relative; width: 80px; height: 80px; top: 100%; left: 80%; border: Dashed 1px Red;"></div>
                 </td>
+               </tr>
             </table>
           </div>
         </div>
@@ -141,17 +171,28 @@
     <script src="jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="angular.min.js"></script>
+    <script src="ui-bootstrap-tpls-2.3.1.min.js"></script>
+    <script src="extenso.js"></script>
     <script>
         //AngularJS
-        var downloadApp = angular.module("emitirReciboApp", []);
+        var downloadApp = angular.module("emitirReciboApp", ['ui.bootstrap']);
          downloadApp.controller('emitirReciboController', function($scope) {
             $scope.init = function () {
               $scope.PESSOA = "Rafael Reis Ferreira";
-              $scope.QUANTIA = "3.500,00";
+              $scope.QUANTIA = "26,50";
               $scope.QUANTIAEXT = "três mil e quientos reais e zero centavos";
               $scope.SERVICO = "Instalação de Software e Desenvolvimento";
               $scope.CIDADE = "Aracaju - Sergipe";
               $scope.DATA = "25/02/2016";
+            }
+
+            $scope.MostraValorPorExt = function() {
+              var extenso = new Extenso();
+              var str = $scope.QUANTIA;
+              var desiredValue = str.replace(/[.]/gi, '');
+              alert(desiredValue);
+              alert(extenso.interpret(desiredValue));
+              $scope.QUANTIAEXT = extenso.interpret(desiredValue);
             }
          });
 

@@ -51,6 +51,11 @@ body {
   font-size: 21px;
 }
 
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;

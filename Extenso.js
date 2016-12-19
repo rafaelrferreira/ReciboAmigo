@@ -131,7 +131,7 @@
 								if (unidade === undefined){
 									resposta;
 								} else {
-									resposta += " e " + unidade;
+									resposta += " " + unidade;
 								}
 								
 							}
@@ -185,7 +185,7 @@
 								if (dezena === undefined){
 									resposta;
 								} else {
-									resposta += " e " + dezena;
+									resposta += " " + dezena;
 								}
 							}			
 						}
@@ -255,8 +255,8 @@
 					extensoParteInteira = extensoParteInteira.trim();
 					extensoParteDecimal = extensoParteDecimal.trim();
 			
-					var Reais = (extensoParteInteira ==="")?"":" Reais";
-					var Centavos = (extensoParteDecimal==="")?"":" Centavos";		
+					var Reais = (extensoParteInteira ==="")?"":" reais";
+					var Centavos = (extensoParteDecimal==="")?"":" centavos";		
 
 					//4º concatena e retorna resultado
 					return extensoParteInteira + Reais + ((extensoParteInteira === "")?"":" ") + extensoParteDecimal + Centavos;

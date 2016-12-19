@@ -70,6 +70,15 @@
                 <p>Somos o único sistema online de recibos que permite você cadastrar as informações do recibo e visualizar o resultado final ao mesmo tempo.</p>
             </div>
           </section>
+          <section style="text-align: center;">
+            <h3 id="ComoFunciona"><strong>Como Funciona</strong></h3><br/>
+            <img src="telasistema.jpg" class="shadow" />
+          </section>
+          <section style="text-align: center;">
+            <h3 id="TiposRecibo"><strong>Tipos de Recibo</strong></h3>
+            <button class="btn btn-md btn-default disabled" style="padding: 12px; font-size: 16px;">Recibo de Pagamento Simples</button> 
+            <button class="btn btn-md btn-default disabled" style="padding: 12px; font-size: 16px;">Recibo de Pagamento de Aluguel</button>
+          </section>
           <section>
             <h3 id="Preço"><strong>Preço</strong></h3>
             <h4 class="help-block" style="text-align: center;">Não é assinatura! Apenas compra de créditos. =)</h4>
@@ -81,7 +90,7 @@
                       <span class="pricing-list-v4-subtitle">Pacote Comum</span>
                   </div>
                   <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
-                      <div class="margin-b-40" style="margin-bottom: 20px !important; ">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important; " data-toggle="tooltip" title="R$ 2.90/recibo">
                           <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
                           <span class="pricing-list-v4-price">2.</span>
                           <span class="pricing-list-v4-subprice">90</span>
@@ -101,15 +110,15 @@
                       <span class="pricing-list-v4-subtitle">Pacote Business</span>
                   </div>
                   <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
-                      <div class="margin-b-40" style="margin-bottom: 20px !important;">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important;" data-toggle="tooltip" title="R$ 1.99/recibo">
                           <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
                           <span class="pricing-list-v4-price">19.</span>
                           <span class="pricing-list-v4-subprice">90</span>
-                          <span class="pricing-list-v4-price-info">10 Recibo</span>
+                          <span class="pricing-list-v4-price-info">10 Recibos</span>
                       </div>
                       <div class="center-block">
                           <button type="button" class="btn-dark-brd btn-base-sm radius-3">Comprar</button>
-                          <span class="help-block">*Sem marca d'água</span>
+                          <span class="help-block">*Adicione sua logomarca</span>
                       </div>
                   </div>
               </div>
@@ -122,15 +131,15 @@
                       <span class="pricing-list-v4-subtitle">Pacote Enterpresi</span>
                   </div>
                   <div class="pricing-list-v4-content" style="padding-top: 20px; padding-bottom: 10px;">
-                      <div class="margin-b-40" style="margin-bottom: 20px !important;">
+                      <div class="margin-b-40" style="margin-bottom: 20px !important;" data-toggle="tooltip" title="R$ 0.99/recibo">
                           <span class="pricing-list-v4-price-sign">R<i class="fa fa-dollar"></i></span>
                           <span class="pricing-list-v4-price">49.</span>
                           <span class="pricing-list-v4-subprice">90</span>
-                          <span class="pricing-list-v4-price-info">50 Recibo</span>
+                          <span class="pricing-list-v4-price-info">50 Recibos</span>
                       </div>
                       <div class="center-block">
                           <button type="button" class="btn-dark-brd btn-base-sm radius-3">Comprar</button>
-                          <span class="help-block">*Sem marca d'água</span>
+                          <span class="help-block">*Adicione sua logomarca</span>
                       </div>
                   </div>
               </div>
@@ -153,6 +162,7 @@
     </div> <!-- /container -->
 
     <script src="jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="angular.min.js"></script>
     <!--<script type="text/javascript" src="jssocials.min.js"></script>-->
     <script>
@@ -178,6 +188,8 @@
               }
             });
           });
+
+          $('[data-toggle="tooltip"]').tooltip();
     </script>
 </body>
 </html>
