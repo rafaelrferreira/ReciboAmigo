@@ -49,12 +49,19 @@
           <h3 style="line-height: 0.3 !important;">Emissão de recibos de forma rápida e fácil. </h3>
             <h3>Sem burocracia. Sem assinaturas.</h3>
           <p style="font-size:14px; padding: 55px;">Emissão de recibos online para pessoa física ou jurídica.</p>
-          <button class="btn btn-xs btn-primary round" onclick="document.location.href='EmitirRecibo.html'">Emitir Recibo &raquo;</button>
+          <!--<button class="btn btn-xs btn-primary round" onclick="document.location.href='EmitirRecibo.html'">Emitir Recibo &raquo;</button>-->
+          <div style="margin-left: 70px;">
+            <div class="form-group">
+              <!--<label for="txtEmail" style="margin-bottom: 1px;">Email</label>-->
+              <div class="col-xs-6" style=" float: left; padding-right: 0px;"><input id="txtEmail" type="text" ng-model="EMAIL" class="form-control input-lg notRound" placeholder="Informe seu melhor email" maxlength="80"/></div>
+              <div style="float: left;"><button class="btn btn-lg btn-primary roundRight" style="height: 46px; padding: 10px; font-size: 18px;">Cadastre-se grátis</button></div>
+            </div>
+          </div>
         </div>
-
+          <div class="clearfix"></div>
         <div class="row marketing features" style="color: black;" ng-app="downloadApp" ng-controller="downloadController" ng-init="init()">
           <section>
-            <h3 id="Características"><strong>Características</strong></h3><br/>
+            <h3 id="Características"><strong>Características e Recursos</strong></h3><br/>
             <div class="col-lg-6">
                 <h4>PMEs / MEI</h4>
                 <p>Pequenas Empresas e Micro empreededores individuais podem utilizar o sistema de emissão para garantir que seus clientes terão sempre confiança nos seus serviços.</p>

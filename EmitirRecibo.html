@@ -14,6 +14,7 @@
     <link type="text/css" href="bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="jumbotron-narrow.css" rel="stylesheet">
     <link type="text/css" href="estilos.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -132,6 +133,7 @@
         <div class="row">
           <div class="col-md-12" style=" margin: 15px;">
             <button class="btn btn-lg btn-success disabled" data-toggle="tooltip" title="Libera a visualização do recibo e os botões de ação">Emitir Recibo</button> <br/><br/>
+            <button type="button" class="btn btn-lg btn-default" onclick="printJS('tabelaRecibo', 'html')">Imprimir</button>
             <table id="tabelaRecibo" class="shadow blur" style="color: Gray; background: white url(marcadagua.png) repeat top left; width: 650px;margin: 0px auto;  border: Solid 2px Gray; margin-bottom: 20px;" >
               <tr>
                   <td style="text-align: center; font-size: 36px; font-weight: bold;">Recibo</td>
@@ -170,6 +172,7 @@
     ================================================== -->
     <script src="jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
     <script src="angular.min.js"></script>
     <script src="ui-bootstrap-tpls-2.3.1.min.js"></script>
     <script src="extenso.js"></script>

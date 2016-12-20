@@ -25,11 +25,24 @@ border-bottom-left-radius: 25px;
 background: #dddddd;
 padding: 0px; 
 }
+.roundRight {
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 0px;
+border-top-left-radius: 0px;
+padding: 5px 20px 5px 20px; 
+}
 .round{
     border-bottom-right-radius: 25px;
 border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
 border-top-left-radius: 25px;
+}
+.notRound{
+    border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+border-top-left-radius: 0px;
 }
 .detail {font-size:12px; text-align: center; }
 .shadow {box-shadow: 5px 5px 5px #888888;}
