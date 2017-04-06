@@ -134,6 +134,7 @@
           <div class="col-md-12" style=" margin: 15px;">
             <button class="btn btn-lg btn-success disabled" data-toggle="tooltip" title="Libera a visualização do recibo e os botões de ação">Emitir Recibo</button> <br/><br/>
             <button type="button" class="btn btn-lg btn-default" onclick="printJS('tabelaRecibo', 'html')">Imprimir</button>
+            <input type="button" id="btnSave" value="Save PNG"/>
             <table id="tabelaRecibo" class="shadow blur" style="color: Gray; background: white url(marcadagua.png) repeat top left; width: 650px;margin: 0px auto;  border: Solid 2px Gray; margin-bottom: 20px;" >
               <tr>
                   <td style="text-align: center; font-size: 36px; font-weight: bold;">Recibo</td>
@@ -160,6 +161,9 @@
             </table>
           </div>
         </div>
+        <dvi class="row">
+          <div id="img-out"></div>
+        </div>
       </div>
 
        <footer class="footer">
@@ -175,8 +179,25 @@
     <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
     <script src="angular.min.js"></script>
     <script src="ui-bootstrap-tpls-2.3.1.min.js"></script>
+    <script src="html2canvas.js"></script>
     <script src="extenso.js"></script>
     <script>
+        //html2Canvas (http://jsfiddle.net/8ypxW/3/) (http://html2canvas.hertzen.com/)
+        $("#btnSave").click(function() { 
+        html2canvas($("#tabelaRecibo"), {
+                onrendered: function(canvas) {
+                    theCanvas = canvas;
+                    document.body.appendChild(canvas);
+
+                    // Convert and download as image 
+                    Canvas2Image.saveAsPNG(canvas); 
+                    $("#img-out").append(canvas);
+                    // Clean up 
+                    //document.body.removeChild(canvas);
+                }
+            });
+        });
+
         //AngularJS
         var downloadApp = angular.module("emitirReciboApp", ['ui.bootstrap']);
          downloadApp.controller('emitirReciboController', function($scope) {
