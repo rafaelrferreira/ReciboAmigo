@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+
+<!--
+https://github.com/MrRio/jsPDF
+http://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript
+
+jspdf.js
+jspdf.plugin.from_html.js
+jspdf.plugin.split_text_to_size.js
+jspdf.plugin.standard_fonts_metrics.js-->
+
+<body>
+  <input type="button" value="Imprimir" onclick="print();" />
+  <p id="ignorePDF">don't print this to pdf</p>
+  <div>
+    <p><font size="3" color="red">print this to pdf</font></p>
+  </div>
+</body>
+
+<script>
+function print(){
+  var doc = new jsPDF();          
+var elementHandler = {
+  '#ignorePDF': function (element, renderer) {
+    return true;
+  }
+};
+var source = window.document.getElementsByTagName("body")[0];
+doc.fromHTML(
+    source,
+    15,
+    15,
+    {
+      'width': 180,'elementHandlers': elementHandler
+    });
+
+doc.output("dataurlnewwindow");
+}
+</script>
+
+</html>
